@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Form from "../components/Form.astro";
+import CreditCards from "../components/CreditCards.astro";
+import Notification from "../components/Notification.astro";
+---
+
+<Layout
+  title="Interactive Card Details Form"
+  description="Junior Frontend Mentor Challenge"
+>
+  <main class="tablet:grid-cols-[minmax(300px,540px)] tablet:justify-center tablet:pt-[50px] container grid grid-cols-[minmax(300px,540px)_minmax(300px,382px)] gap-[127px] pt-[187px]">
+      <CreditCards />
+      <Form />
+      <Notification />
+  </main>
+</Layout>
