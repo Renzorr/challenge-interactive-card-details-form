@@ -1,86 +1,139 @@
 <form action="" class="mobile:pt-[50px] mb-[50px] pt-[87px]" id="form">
   <div class="mb-[25px] flex flex-col">
-    <label class="mb-[7.5px] text-[12px] uppercase tracking-[1.8px]" for="name">Cardholder name</label>
-    <input type="text" class="border-light-gray focus:outline-violet rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]" name="name" data-value="card-name" data-default="Jane Appleseed" maxlength="25" placeholder="e.g. Jane Appleseed" />
+    <label class="mb-[7.5px] text-[12px] uppercase tracking-[1.8px]" for="name"
+      >Cardholder name</label
+    >
+    <input
+      type="text"
+      class="border-light-gray focus:outline-violet rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]"
+      name="name"
+      data-value="card-name"
+      data-default="Jane Appleseed"
+      maxlength="25"
+      placeholder="e.g. Jane Appleseed"
+    />
   </div>
 
   <div class="mb-[26px] flex flex-col">
-    <label class="mb-[7.5px] text-[12px] uppercase tracking-[1.8px]" for="number">Card number</label>
-    <input type="text" class="border-light-gray focus:outline-violet rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]" name="number" placeholder="e.g. 1234 5678 9123 0000" minlength="19" maxlength="19" data-value="card-number" data-default="0000 0000 0000 0000" />
+    <label
+      class="mb-[7.5px] text-[12px] uppercase tracking-[1.8px]"
+      for="number">Card number</label
+    >
+    <input
+      type="text"
+      class="border-light-gray focus:outline-violet rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]"
+      name="number"
+      placeholder="e.g. 1234 5678 9123 0000"
+      minlength="19"
+      maxlength="19"
+      data-value="card-number"
+      data-default="0000 0000 0000 0000"
+    />
   </div>
 
   <div class="flex gap-[20px]">
     <div class="flex flex-col gap-[5.4px]">
-      <label class="text-[12px] uppercase tracking-[1.8px]" for="expiration">Exp. Date (MM/YY)</label>
+      <label class="text-[12px] uppercase tracking-[1.8px]" for="expiration"
+        >Exp. Date (MM/YY)</label
+      >
       <div class="flex gap-[10px]">
-        <input class="border-light-gray focus:outline-violet max-w-[80px] rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]" type="text" name="expiration" placeholder="MM" data-value="card-month" data-default="00" />
-        <input class="border-light-gray focus:outline-violet max-w-[80px] rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]" type="text" name="expiration" data-value="card-year" data-default="00" placeholder="YY" />
+        <input
+          class="border-light-gray focus:outline-violet max-w-[80px] rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]"
+          type="text"
+          name="expiration"
+          placeholder="MM"
+          data-value="card-month"
+          data-default="00"
+        />
+        <input
+          class="border-light-gray focus:outline-violet max-w-[80px] rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]"
+          type="text"
+          name="expiration"
+          data-value="card-year"
+          data-default="00"
+          placeholder="YY"
+        />
       </div>
     </div>
 
     <div class="flex flex-col gap-[5.4px]">
       <label class="text-[12px] tracking-[1.8px]" for="code">CVC</label>
-      <input class="border-light-gray focus:outline-violet w-full rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]" type="text" name="code" minlength="3" maxlength="3" data-value="card-code" data-default="000" placeholder="e.g. 123" />
+      <input
+        class="border-light-gray focus:outline-violet w-full rounded-lg border py-[7.7px] pl-[16px] text-[18px] tracking-[-0.15px]"
+        type="text"
+        name="code"
+        minlength="3"
+        maxlength="3"
+        data-value="card-code"
+        data-default="000"
+        placeholder="e.g. 123"
+      />
     </div>
   </div>
-  <button class="bg-very-dark-violet hover:bg-saturate-violet mt-[41px] w-full rounded-lg py-[13.3px] text-[17.6px] tracking-[-0.2px] text-white duration-300" type="submit">Confirm</button>
+  <button
+    class="bg-very-dark-violet hover:bg-saturate-violet mt-[41px] w-full rounded-lg py-[13.3px] text-[17.6px] tracking-[-0.2px] text-white duration-300"
+    type="submit">Confirm</button
+  >
 </form>
 
 <script>
-  const cardForm = document.getElementById('form');
-  const inputs = document.querySelectorAll('input');
-  var successNotification = document.getElementById('notification');
-  
+  const cardForm = document.getElementById("form");
+  const inputs = document.querySelectorAll("input");
+  var successNotification = document.getElementById("notification");
+
   const maskOptions = [
-  	{ mask: /^[a-zA-Z\s]*$/ },
-  	{ mask: '0000 0000 0000 0000' },
-  	{
-  		mask: '00',
-  		blocks: { 0: { mask: Number, min: 1, max: 12, autofix: true } },
-  	},
-  	{ mask: '00' },
-  	{ mask: '000' },
+    { mask: /^[a-zA-Z\s]*$/ },
+    { mask: "0000 0000 0000 0000" },
+    {
+      mask: "00",
+      blocks: { 0: { mask: Number, min: 1, max: 12, autofix: true } },
+    },
+    { mask: "00" },
+    { mask: "000" },
   ];
-  
+
   function handleCardHolder(e) {
-  	const {
-  		value,
-  		dataset: { value: cardAreaId, default: defaultValue },
-  	} = e.target;
-  	const cardArea = document.getElementById(cardAreaId);
-  	cardArea.textContent = value ? value : defaultValue;
+    const {
+      value,
+      dataset: { value: cardAreaId, default: defaultValue },
+    } = e.target;
+    const cardArea = document.getElementById(cardAreaId);
+    cardArea.textContent = value ? value : defaultValue;
   }
-  
+
+  function removeClass(e) {
+    e.target.classList.remove("warning");
+  }
+
   function validateInput(input) {
-  	if (input.value.trim() === '') {
-  		input.classList.add('warning');
-  	} else {
-  		input.classList.remove('warning');
-  	}
+    if (input.value.trim() === "") {
+      input.classList.add("warning");
+    } else {
+      input.classList.remove("warning");
+    }
   }
-  
+
   function showNotification(isFilled) {
-  	if (isFilled) {
-  		cardForm.classList.add('hidden');
-  		successNotification.classList.remove('hidden');
-  	}
+    if (isFilled) {
+      cardForm.classList.add("hidden");
+      successNotification.classList.remove("hidden");
+    }
   }
-  
+
   function handleSubmit(e) {
-  	e.preventDefault();
-  	const inputArray = [...inputs];
-  	const isFilled = inputArray.every((input) => input.value.trim() !== '');
-  
-  	inputs.forEach((input) => {
-  		validateInput(input);
-  	});
-  	showNotification(isFilled);
+    e.preventDefault();
+    const inputArray = [...inputs];
+    const isFilled = inputArray.every((input) => input.value.trim() !== "");
+
+    inputs.forEach((input) => validateInput(input));
+    showNotification(isFilled);
   }
-  
+
   inputs.forEach((input, i) => {
-  	IMask(input, maskOptions[i]);
-  	input.addEventListener('input', handleCardHolder);
+    IMask(input, maskOptions[i]);
+    input.addEventListener("input", handleCardHolder);
+    input.addEventListener("focus", removeClass);
   });
-  
-  cardForm.addEventListener('submit', handleSubmit);
+
+  cardForm.addEventListener("submit", handleSubmit);
 </script>
