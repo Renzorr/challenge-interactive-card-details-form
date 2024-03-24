@@ -23,7 +23,7 @@ export default {
 				"back-card": "url(/images/bg-card-back.webp)"
 			},
 			boxShadow: {
-				card: "0.5rem 2rem 8rem -1rem rgba(0, 0, 0, 0.25)"
+				card: "8px 32px 128px -16px rgba(0, 0, 0, 0.25)"
 			},
 			screens: {
 				tablet: { max: "980px" },

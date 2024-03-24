@@ -5,13 +5,12 @@ import CreditCards from "../components/CreditCards.astro";
 import Notification from "../components/Notification.astro";
 ---
 
-<Layout
-  title="Interactive Card Details Form"
-  description="Junior Frontend Mentor Challenge"
->
+<Layout title="Interactive Card Details Form" description="Junior Frontend Mentor Challenge">
+  <h1 class="sr-only">Interactive card details form</h1>
   <main class="tablet:grid-cols-[minmax(300px,540px)] tablet:justify-center tablet:pt-[50px] container grid grid-cols-[minmax(300px,540px)_minmax(300px,382px)] gap-[127px] pt-[187px]">
-      <CreditCards />
-      <Form />
-      <Notification />
+    <CreditCards />
+    <Form />
+    <Notification />
   </main>
 </Layout>
+
